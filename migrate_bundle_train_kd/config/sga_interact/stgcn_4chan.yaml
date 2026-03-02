@@ -1,0 +1,57 @@
+# 工作目录
+work_dir: ./work_dir/recognition/sga/ST_GCN_4chan_finetune
+
+# ===== Feeder（使用你已生成的 4通道 gendata）=====
+feeder: feeder.feeder.Feeder
+train_feeder_args:
+  data_path: /workspace/st-gcn/data/basketball_processed/GAR/train_data.npy
+  label_path: /workspace/st-gcn/data/basketball_processed/GAR/train_label.pkl
+  random_choose: True
+  random_move: True
+  window_size: 400
+  debug: False
+
+test_feeder_args:
+  data_path: /workspace/st-gcn/data/basketball_processed/GAR/val_data.npy
+  label_path: /workspace/st-gcn/data/basketball_processed/GAR/val_label.pkl
+
+# ===== 模型 =====
+model: net.st_gcn.Model
+model_args:
+  in_channels: 4                # <= 关键：4 通道
+  num_class: 20
+  dropout: 0.5
+  edge_importance_weighting: True
+  graph_args:
+    layout: 'sga_interact_17'
+    strategy: 'spatial'
+
+# ===== 预训练权重（使用转换好的 4通道）=====
+weights: /workspace/st-gcn/models/st_gcn_kinetics_3to4.pt
+
+# 这些层尺寸对不上，训练时重头学（必须忽略）
+ignore_weights:
+  - data_bn.weight
+  - data_bn.bias
+  - data_bn.running_mean
+  - data_bn.running_var
+  - data_bn.num_batches_tracked
+  - edge_importance
+  - A
+  - fcn.weight
+  - fcn.bias
+  - classifier.weight
+  - classifier.bias
+  - fc.weight
+  - fc.bias
+
+# ===== 训练参数 =====
+device: [0]
+batch_size: 8
+test_batch_size: 8
+num_epoch: 80
+base_lr: 0.01
+weight_decay: 0.0005
+step: [30, 60]
+num_worker: 4
+log_interval: 100

@@ -1,0 +1,26 @@
+# config/sga_interact/stgcn_4chan_ft.yaml
+feeder: feeder.feeder.Feeder
+train_feeder_args:
+  data_path: data/basketball_processed/GAR/C4/train_data.npy
+  label_path: data/basketball_processed/GAR/C4/train_label.pkl
+  random_choose: True
+  random_move: True
+  window_size: 400
+test_feeder_args:
+  data_path: data/basketball_processed/GAR/C4/val_data.npy
+  label_path: data/basketball_processed/GAR/C4/val_label.pkl
+
+model: net.st_gcn.Model
+model_args:
+  in_channels: 4
+  num_class: 20            # 占位，不影响抽特征
+  edge_importance_weighting: True
+  graph_args:
+    layout: sga_interact_17
+    strategy: spatial
+    max_hop: 1
+    dilation: 1
+
+# 这里换成「你微调到 89% 的 checkpoint」
+weights: work_dir/recognition/sga/ST_GCN_4chan_finetune/epoch80_model.pt
+ignore_weights: []             # 同架构微调权重 -> 不需要忽略

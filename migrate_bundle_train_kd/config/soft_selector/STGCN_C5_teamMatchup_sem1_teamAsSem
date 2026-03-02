@@ -1,0 +1,98 @@
+work_dir: ./work_dir/recognition/tag/STGCN_C5_teamMatchup_sem1_teamAsSem
+phase: train
+save_interval: 10
+eval_interval: 1
+log_interval: 100
+print_log: true
+save_result: false
+pavi_log: false
+feeder: feeder.feeder.Feeder
+num_worker: 0
+train_feeder_args:
+  data_path: data/basketball_processed/GAR/C5/train_data.npy
+  label_path: data/basketball_processed/GAR/C5/train_label.pkl
+  random_choose: false
+  random_move: false
+  window_size: 400
+  debug: false
+test_feeder_args:
+  data_path: data/basketball_processed/GAR/C5/val_data.npy
+  label_path: data/basketball_processed/GAR/C5/val_label.pkl
+model: net.shift_dual_stgcn_backbone.Model
+model_args:
+  in_channels: 5
+  num_class: 20
+  num_point: 17
+  num_person: 6
+  graph_args:
+    layout: sga_interact_17
+    strategy: spatial
+  in_channels_semantic: 1
+  use_temporal_attention: true
+  tag:
+    enable: true
+    mode: ball
+    use_ball: true
+    detach_adj: true
+    norm: sym
+    lambda_fuse: 0.1
+    learnable_lambda: true
+    self_loop: true
+    ramp_epochs: 12
+    tau: 0.35
+    ball_mix: true
+    ball_weight: -1.0
+    ball_tau_center: 0.35
+    soft_selector:
+      enable: true
+      k_list:
+      - 2
+      - 3
+      - 4
+      - 5
+      selector: global
+      warmup_epochs: 12
+      gate_init: 0.0
+      gate_max: 1.0
+      temperature: 1.0
+    team_graph: true
+    team_gamma_between: 0.5
+    team_eta_ball: 0.5
+    lambda_off: 0.35
+    lambda_def: 0.2
+    lambda_match: 0.35
+    k_def: 2
+    k_match: 1
+    matchup_symmetric: true
+  backbone_cls: net.st_gcn.Model
+  backbone_args:
+    in_channels: 5
+    num_class: 20
+    edge_importance_weighting: true
+    graph_args:
+      layout: sga_interact_17
+      strategy: spatial
+  backbone_weights: ./work_dir/recognition/tag/ST_GCN_C4_processed/best_model.pt
+  backbone_ignore: []
+  freeze_backbone: true
+  person_pool: mean
+  kd:
+    enable: true
+    alpha: 0.3
+    temperature: 2.0
+device:
+- 0
+batch_size: 16
+test_batch_size: 8
+num_epoch: 40
+base_lr: 0.005
+weight_decay: 0.0005
+step:
+- 25
+- 35
+show_topk:
+- 1
+- 5
+use_kd: true
+kd_alpha: 0.3
+kd_temperature: 2.0

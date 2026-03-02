@@ -1,0 +1,49 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Packaging / build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Test / type-check caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Windows metadata sidecar files copied into Linux workspace
+*:Zone.Identifier
+
+# Logs
+*.log
+
+# Large training outputs (keep local, not in VCS)
+work_dir/
+outputs/
+migrate_bundle_train_kd/work_dir/
+
+# Local data artifacts
+*.pt
+*.pth
+*.npy
+*.npz
+*.pkl
+*.tar
+*.tar.gz

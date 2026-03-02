@@ -1,0 +1,55 @@
+# ========= work dir =========
+work_dir: ./work_dir/recognition/sga/ST_GCN_finetune
+
+# ========= feeder =========
+feeder: feeder.feeder_sga.Feeder
+
+train_feeder_args:
+  data_root: /workspace/st-gcn/data/basketball
+  split_pkl: GAR_train_split_0.3ratio_info.pkl     # 使用你验证过的 split
+  label_pkl: GAR_action_info.pkl
+  fixed_T: 160
+  strict: true
+  expected_num_class: 20
+
+test_feeder_args:
+  data_root: /workspace/st-gcn/data/basketball
+  split_pkl: GAR_test_split_0.3ratio_info.pkl
+  label_pkl: GAR_action_info.pkl
+  fixed_T: 160
+  strict: true
+  expected_num_class: 20
+
+# ========= model =========
+model: net.st_gcn.Model
+model_args:
+  in_channels: 3
+  dropout: 0.5
+  num_class: 20                   # 仅放在 model_args 里
+  edge_importance_weighting: True
+  graph_args:
+    layout: 'sga_interact_17'
+    strategy: 'spatial'
+
+# ========= pretrained weights (optional) =========
+weights: /workspace/st-gcn/models/st_gcn.kinetics.pt
+ignore_weights:
+  - fcn             # 全连接头
+  - classifier      # 另一类线性头命名
+  - fc              # 有些实现用 fc
+  - A               # 邻接矩阵(18x18)与当前17不匹配
+  - data_bn         # BN 通道数从 54(18*3) → 51(17*3)
+  - edge_importance # 这些是 [3, 18, 18] 的mask
+
+
+# ========= training =========
+device: [0]
+batch_size: 8
+test_batch_size: 8
+num_epoch: 80                 # 先短训 smoke test；确认 OK 再拉长
+base_lr: 0.01
+weight_decay: 0.0005
+step: [30, 60]
+
+log_interval: 500
+num_worker: 0                # 先 0，跑通后再逐步增大

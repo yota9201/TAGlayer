@@ -1,0 +1,23 @@
+# 基础
+numpy==1.24.4
+scipy==1.10.1
+PyYAML==6.0.2
+
+# 深度学习
+torch==2.1.0
+torchvision==0.16.0
+
+# 工具
+tqdm==4.66.1
+tensorboard==2.14.0
+
+# 数据处理/文件格式
+h5py==3.9.0
+scikit-video==1.1.11
+
+# 绘图（可选，用于可视化）
+matplotlib==3.8.0
+contourpy==1.1.1
+
+# 兼容 ST-GCN 的自带工具
+torchlight==1.0

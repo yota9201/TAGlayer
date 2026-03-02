@@ -1,0 +1,57 @@
+work_dir: ./work_dir/recognition/sga/ST_GCN_c3_kinetics_init
+
+feeder: feeder.feeder.Feeder
+train_feeder_args:
+  data_path: /workspace/st-gcn/data/basketball_processed/GAR/C3/train_data.npy
+  label_path: /workspace/st-gcn/data/basketball_processed/GAR/C3/train_label.pkl
+  random_choose: True
+  random_move: True
+  window_size: 400
+  debug: False
+test_feeder_args:
+  data_path: /workspace/st-gcn/data/basketball_processed/GAR/C3/val_data.npy
+  label_path: /workspace/st-gcn/data/basketball_processed/GAR/C3/val_label.pkl
+
+model: net.st_gcn.Model
+model_args:
+  in_channels: 3
+  num_class: 20            # ← 改成 action_map.pkl 的类别数
+  dropout: 0.5
+  edge_importance_weighting: True
+  graph_args:
+    layout: 'sga_interact_17'   # 你的 17 关节图
+    strategy: 'spatial'
+  # 若支持，建议加：
+  # num_person: 6
+
+weights: /workspace/st-gcn/models/st_gcn.kinetics.pt   # ← Kinetics 原始 3通道权重
+
+ignore_weights:
+  - A
+  - fcn.weight
+  - fcn.bias
+  - data_bn.weight
+  - data_bn.bias
+  - data_bn.running_mean
+  - data_bn.running_var
+  - data_bn.num_batches_tracked
+  - edge_importance.0
+  - edge_importance.1
+  - edge_importance.2
+  - edge_importance.3
+  - edge_importance.4
+  - edge_importance.5
+  - edge_importance.6
+  - edge_importance.7
+  - edge_importance.8
+  - edge_importance.9
+
+device: [0]
+batch_size: 8
+test_batch_size: 8
+num_epoch: 80
+base_lr: 0.01
+weight_decay: 0.0005
+step: [30, 60]
+num_worker: 4
+log_interval: 100

@@ -1,0 +1,81 @@
+work_dir: work_dir/recognition/sga/E2E_semantic_TA_TAG_KD_ball_knn4_1
+phase: train
+save_interval: 10
+eval_interval: 1
+log_interval: 100
+save_result: false
+print_log: true
+pavi_log: false
+
+feeder: feeder.feeder.Feeder
+num_worker: 4
+train_feeder_args:
+  data_path: data/basketball_processed/GAR/C4/train_data.npy
+  label_path: data/basketball_processed/GAR/C4/train_label.pkl
+  random_choose: false
+  random_move: false
+  window_size: 400
+  debug: false
+test_feeder_args:
+  data_path: data/basketball_processed/GAR/C4/val_data.npy
+  label_path: data/basketball_processed/GAR/C4/val_label.pkl
+
+model: net.shift_dual_stgcn_backbone.Model
+model_args:
+  in_channels: 4
+  num_class: 20
+  num_point: 17
+  num_person: 6
+  graph: net.graph.Graph
+  graph_args: { layout: sga_interact_17, strategy: spatial }
+
+  in_channels_semantic: 1
+  use_temporal_attention: true
+
+  # --- TAG：建议先用 kNN + 小 lambda，稳定后再切 ball ---
+  tag:
+    enable: true
+    #mode: knn
+    k: 4
+    lambda_fuse: 0.10
+    learnable_lambda: true
+    self_loop: true
+    alpha_selfloop: 0.5
+    norm: sym
+    detach_adj: true
+    tau: 0.35
+    ramp_epochs: 12
+    # 切换球权星型图（后期再改）：
+    mode: ball
+    use_ball: true
+    fallback: knn
+    #norm: row
+    #lambda_fuse: 0.05
+
+  backbone_cls: net.st_gcn.Model
+  backbone_args:
+    in_channels: 4
+    num_class: 20
+    edge_importance_weighting: true
+    graph_args: { layout: sga_interact_17, strategy: spatial }
+  backbone_weights: work_dir/recognition/sga/ST_GCN_4chan_finetune/epoch80_model.pt
+  backbone_ignore: []
+  freeze_backbone: true
+  person_pool: mean
+
+  kd:
+    enable: true
+    alpha: 0.3          # 0.2~0.4 之间尝试
+    temperature: 2.0    # 2~4 之间尝试
+
+device: [0]
+batch_size: 8
+test_batch_size: 8
+num_epoch: 120
+base_lr: 0.005          # 开 TAG+KD 稳妥一些
+weight_decay: 0.0005
+step: [70, 100]
+show_topk: [1, 5]
+debug: false
+use_kd: false
+kd_alpha: 0.0

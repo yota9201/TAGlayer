@@ -1,0 +1,33 @@
+work_dir: ./work_dir/heads/shift_head_c4
+
+dataset:
+  train_main: ./feat_out/features_c4_ft_train.npy
+  val_main:   ./feat_out/features_c4_ft_val.npy
+  # 可选：自动推断类别数的来源（两者其一）
+  action_map_path: data/basketball_processed/GAR/action_map.pkl   # 推荐
+  # 或者：不用 action_map，自动从标签里算 max(label)+1
+  # infer_num_class_from_labels: true
+
+model:
+  head: net.heads.dual_shift_from_feats.DualShiftHeadFromFeats
+  head_kwargs:
+    # C_in/V 一律自动从 meta.json 读，不用你填
+    # num_class 也自动从 action_map 或 labels 推断
+    tcn_blocks: 2
+    heads: 4
+    drop: 0.2
+    use_temporal_attention: true
+    has_aux: false
+
+train:
+  epochs: 30
+  batch_size: 32
+  num_workers: 0      # ✅ 单进程，避免 /dev/shm
+  pin_memory: false   # ✅ 关掉
+  lr: 3e-4
+  weight_decay: 0.0
+  device: cuda
+  save: ./feat_out/shift_head_c4_from_ft.pt
+  seed: 0
+
+

@@ -1,0 +1,57 @@
+feeder: feeder.feeder.Feeder
+train_feeder_args:
+  data_path: data/basketball_processed/GAR/C4/train_data.npy
+  label_path: data/basketball_processed/GAR/C4/train_label.pkl
+  random_choose: true
+  random_move: true
+  window_size: 400
+
+test_feeder_args:
+  data_path: data/basketball_processed/GAR/C4/val_data.npy
+  label_path: data/basketball_processed/GAR/C4/val_label.pkl
+
+model: net.shift_dual_stgcn_backbone.Model
+model_args:
+  # ===== 端到端总模型 =====
+  in_channels: 4
+  num_class: 20
+  num_point: 17
+  num_person: 6
+  graph: net.graph.Graph
+  graph_args:
+    layout: sga_interact_17
+    strategy: spatial
+
+  # ===== 关闭 TAG（先复现原行为）=====
+  tag:
+    enable: false
+
+  # ===== ST-GCN 骨干（吃 4 通道；加载你 89% 微调权重；冻结）=====
+  backbone_cls: net.st_gcn.Model
+  backbone_args:
+    in_channels: 4
+    num_class: 20
+    edge_importance_weighting: true
+    graph_args:
+      layout: sga_interact_17
+      strategy: spatial
+  backbone_weights: work_dir/recognition/sga/ST_GCN_4chan_finetune/epoch80_model.pt
+  backbone_ignore: []
+  freeze_backbone: true
+
+  # ===== 与原 ST-GCN 一致的聚合 =====
+  person_pool: mean
+  use_temporal_attention: false
+
+  # ===== 暂不走语义支路 =====
+  in_channels_semantic: 0
+
+device: [0]
+batch_size: 8
+test_batch_size: 8
+num_epoch: 80
+base_lr: 0.01
+weight_decay: 0.0005
+step: [30, 60]
+num_worker: 4
+log_interval: 100

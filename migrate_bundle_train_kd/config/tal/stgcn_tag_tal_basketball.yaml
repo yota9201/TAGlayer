@@ -1,0 +1,87 @@
+work_dir: ./work_dir/tal/tag_tal_basketball
+
+phase: train
+save_result: false
+start_epoch: 0
+num_epoch: 40
+use_gpu: true
+device: [0]
+
+log_interval: 20
+save_interval: 10
+eval_interval: 1
+save_log: true
+print_log: true
+pavi_log: false
+
+feeder: feeder.feeder_tal.Feeder
+num_worker: 0
+train_feeder_args:
+  data_root: ./data/basketball
+  split_pkl: GAR_train_split_0.3ratio_info.pkl
+  fixed_T: 160
+  fps: 20.0
+  use_c4: true
+test_feeder_args:
+  data_root: ./data/basketball
+  split_pkl: GAR_test_split_0.3ratio_info.pkl
+  fixed_T: 160
+  fps: 20.0
+  use_c4: true
+
+batch_size: 8
+test_batch_size: 8
+debug: false
+
+model: net.tag_tal.Model
+model_args:
+  in_channels: 4
+  num_class: 20
+  num_point: 17
+  num_person: 6
+  graph_args:
+    layout: sga_interact_17
+    strategy: spatial
+  backbone_cls: net.st_gcn.Model
+  backbone_args:
+    in_channels: 4
+    num_class: 20
+    edge_importance_weighting: true
+    graph_args:
+      layout: sga_interact_17
+      strategy: spatial
+  backbone_weights: ./work_dir/recognition/tag/ST_GCN_C4_processed/best_model.pt
+  freeze_backbone: true
+  person_pool: mean
+  temporal_hidden: 256
+  dropout: 0.1
+  tag:
+    enable: true
+    mode: ball
+    use_ball: true
+    detach_adj: true
+    norm: sym
+    lambda_fuse: 0.05
+    learnable_lambda: false
+    self_loop: true
+    ramp_epochs: 12
+    tau: 0.35
+    ball_mix: true
+    ball_weight: 0.8
+    ball_tau_center: 0.35
+
+weights: null
+ignore_weights: []
+
+base_lr: 0.0005
+step: [25, 35]
+warm_up_epoch: 0
+optimizer: AdamW
+nesterov: true
+weight_decay: 0.0005
+backbone_lr_mult: 0.1
+
+cls_loss_weight: 1.0
+actionness_loss_weight: 1.0
+frame_threshold: 0.5
+iou_threshold: 0.5

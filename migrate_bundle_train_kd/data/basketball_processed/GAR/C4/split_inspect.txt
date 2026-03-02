@@ -1,0 +1,31 @@
+dict(defaultdict) keys(sample): ['HO', 'Basket Cut', 'PnR', 'Down', 'Slip']
+  .HOlist[124] of tuple
+  .HO  [0]tuple
+  .HO  [1]tuple
+  .HO  [2]tuple
+  .HO  [3]tuple
+  .HO  [4]tuple
+  .Basket Cutlist[31] of tuple
+  .Basket Cut  [0]tuple
+  .Basket Cut  [1]tuple
+  .Basket Cut  [2]tuple
+  .Basket Cut  [3]tuple
+  .Basket Cut  [4]tuple
+  .PnRlist[209] of tuple
+  .PnR  [0]tuple
+  .PnR  [1]tuple
+  .PnR  [2]tuple
+  .PnR  [3]tuple
+  .PnR  [4]tuple
+  .Downlist[39] of tuple
+  .Down  [0]tuple
+  .Down  [1]tuple
+  .Down  [2]tuple
+  .Down  [3]tuple
+  .Down  [4]tuple
+  .Sliplist[38] of tuple
+  .Slip  [0]tuple
+  .Slip  [1]tuple
+  .Slip  [2]tuple
+  .Slip  [3]tuple
+  .Slip  [4]tuple

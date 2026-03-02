@@ -1,0 +1,1296 @@
+{
+  "root": "/workspace/st-gcn/data/basketball",
+  "exists": {
+    "annots": true,
+    "joints": true,
+    "top_level_pkl_count": 6
+  },
+  "pkl": {
+    "GAR_joint_stats.pkl": {
+      "size": 389,
+      "keys": [
+        "mean_joint",
+        "std_joint",
+        "mean_djoint",
+        "std_djoint"
+      ],
+      "len": {
+        "mean_joint": 3,
+        "std_joint": 3,
+        "mean_djoint": 3,
+        "std_djoint": 3
+      },
+      "sample": {
+        "key": "mean_joint",
+        "type": "ndarray"
+      }
+    },
+    "GAR_action_info.pkl": {
+      "size": 115761,
+      "keys": [
+        "HO",
+        "Basket Cut",
+        "PnR",
+        "Down",
+        "Slip",
+        "Flare",
+        "Isolation",
+        "Cross",
+        "Playmaking",
+        "Post",
+        "Keep",
+        "Exit",
+        "Reverse",
+        "DHO",
+        "FHO",
+        "Pop",
+        "Up",
+        "Pin",
+        "Baseline Cut",
+        "Shuffle"
+      ],
+      "len": {
+        "HO": 414,
+        "Basket Cut": 106,
+        "PnR": 699,
+        "Down": 132,
+        "Slip": 129,
+        "Flare": 224,
+        "Isolation": 131,
+        "Cross": 230,
+        "Playmaking": 63,
+        "Post": 75,
+        "Keep": 63,
+        "Exit": 164,
+        "Reverse": 154,
+        "DHO": 274,
+        "FHO": 88,
+        "Pop": 92,
+        "Up": 54,
+        "Pin": 22,
+        "Baseline Cut": 3,
+        "Shuffle": 3
+      },
+      "sample": {
+        "key": "HO",
+        "type": "list",
+        "list_len": 414,
+        "first_type": "tuple"
+      }
+    },
+    "GAR_train_split_0.3ratio_info.pkl": {
+      "size": 81425,
+      "keys": [
+        "HO",
+        "Basket Cut",
+        "PnR",
+        "Down",
+        "Slip",
+        "Flare",
+        "Isolation",
+        "Cross",
+        "Playmaking",
+        "Post",
+        "Keep",
+        "Exit",
+        "Reverse",
+        "DHO",
+        "FHO",
+        "Pop",
+        "Up",
+        "Pin",
+        "Baseline Cut",
+        "Shuffle"
+      ],
+      "len": {
+        "HO": 290,
+        "Basket Cut": 75,
+        "PnR": 490,
+        "Down": 93,
+        "Slip": 91,
+        "Flare": 157,
+        "Isolation": 92,
+        "Cross": 161,
+        "Playmaking": 45,
+        "Post": 53,
+        "Keep": 45,
+        "Exit": 115,
+        "Reverse": 108,
+        "DHO": 192,
+        "FHO": 62,
+        "Pop": 65,
+        "Up": 38,
+        "Pin": 16,
+        "Baseline Cut": 2,
+        "Shuffle": 2
+      },
+      "sample": {
+        "key": "HO",
+        "type": "list",
+        "list_len": 290,
+        "first_type": "tuple"
+      }
+    },
+    "GAL_train_split_0.3ratio_info.pkl": {
+      "size": 39090,
+      "keys": null,
+      "len": 1184,
+      "sample": "str"
+    },
+    "GAL_test_split_0.3ratio_info.pkl": {
+      "size": 16747,
+      "keys": null,
+      "len": 507,
+      "sample": "str"
+    },
+    "GAR_test_split_0.3ratio_info.pkl": {
+      "size": 34646,
+      "keys": [
+        "HO",
+        "Basket Cut",
+        "PnR",
+        "Down",
+        "Slip",
+        "Flare",
+        "Isolation",
+        "Cross",
+        "Playmaking",
+        "Post",
+        "Keep",
+        "Exit",
+        "Reverse",
+        "DHO",
+        "FHO",
+        "Pop",
+        "Up",
+        "Pin",
+        "Baseline Cut",
+        "Shuffle"
+      ],
+      "len": {
+        "HO": 124,
+        "Basket Cut": 31,
+        "PnR": 209,
+        "Down": 39,
+        "Slip": 38,
+        "Flare": 67,
+        "Isolation": 39,
+        "Cross": 69,
+        "Playmaking": 18,
+        "Post": 22,
+        "Keep": 18,
+        "Exit": 49,
+        "Reverse": 46,
+        "DHO": 82,
+        "FHO": 26,
+        "Pop": 27,
+        "Up": 16,
+        "Pin": 6,
+        "Baseline Cut": 1,
+        "Shuffle": 1
+      },
+      "sample": {
+        "key": "HO",
+        "type": "list",
+        "list_len": 124,
+        "first_type": "tuple"
+      }
+    }
+  },
+  "joints": {
+    "count": 1691,
+    "samples": [
+      {
+        "rel": "joints/S1_00_000249_000258_pose.npy",
+        "size": 1090034,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_01_000153_000202_pose.npy",
+        "size": 1090036,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_01_001450_001501_pose.npy",
+        "size": 1334836,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_02_001637_001647_pose.npy",
+        "size": 1212434,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_04_001157_001206_pose.npy",
+        "size": 1090034,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_05_000513_000522_pose.npy",
+        "size": 1090034,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_06_000229_000236_pose.npy",
+        "size": 845234,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_07_000234_000247_pose.npy",
+        "size": 1579638,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_08_000534_000542_pose.npy",
+        "size": 967634,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_08_001731_001738_pose.npy",
+        "size": 845235,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_09_000931_000939_pose.npy",
+        "size": 967637,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_11_000330_000339_pose.npy",
+        "size": 1090039,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_11_001939_001947_pose.npy",
+        "size": 967639,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_12_001101_001107_pose.npy",
+        "size": 722834,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_13_000230_000237_pose.npy",
+        "size": 845236,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_13_001406_001419_pose.npy",
+        "size": 1579636,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_14_000631_000641_pose.npy",
+        "size": 1212435,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_14_002155_002203_pose.npy",
+        "size": 967635,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_15_001057_001104_pose.npy",
+        "size": 845234,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_16_000456_000505_pose.npy",
+        "size": 1090034,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_16_001422_001429_pose.npy",
+        "size": 845234,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_17_001103_001113_pose.npy",
+        "size": 1212434,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_19_001352_001401_pose.npy",
+        "size": 1090034,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S1_20_000931_000940_pose.npy",
+        "size": 1090034,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_00_001045_001058_pose.npy",
+        "size": 1582123,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_01_000730_000742_pose.npy",
+        "size": 1474371,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_02_000657_000702_pose.npy",
+        "size": 624908,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_03_000415_000424_pose.npy",
+        "size": 1141444,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_03_001645_001654_pose.npy",
+        "size": 1119413,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_04_001046_001101_pose.npy",
+        "size": 1782818,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_05_000508_000514_pose.npy",
+        "size": 796276,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_06_000438_000448_pose.npy",
+        "size": 1298116,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_06_001559_001605_pose.npy",
+        "size": 735076,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_07_001010_001020_pose.npy",
+        "size": 1146338,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_09_000152_000200_pose.npy",
+        "size": 857474,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_10_000218_000228_pose.npy",
+        "size": 1163475,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_10_001545_001553_pose.npy",
+        "size": 918675,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_11_000809_000820_pose.npy",
+        "size": 1263844,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_12_000351_000359_pose.npy",
+        "size": 1053314,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_12_001452_001459_pose.npy",
+        "size": 820754,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_13_000917_000925_pose.npy",
+        "size": 967636,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_14_000410_000420_pose.npy",
+        "size": 1209987,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_14_001348_001355_pose.npy",
+        "size": 864820,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_15_000937_000944_pose.npy",
+        "size": 847682,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_16_000904_000916_pose.npy",
+        "size": 1359314,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_17_001000_001009_pose.npy",
+        "size": 1121899,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_18_000310_000324_pose.npy",
+        "size": 1665314,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_19_000216_000223_pose.npy",
+        "size": 855026,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S2_19_001214_001223_pose.npy",
+        "size": 1065554,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_00_000821_000833_pose.npy",
+        "size": 1457235,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_01_000413_000421_pose.npy",
+        "size": 967637,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_01_001548_001555_pose.npy",
+        "size": 845237,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_02_000734_000742_pose.npy",
+        "size": 967678,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_03_000444_000452_pose.npy",
+        "size": 967639,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_03_001605_001616_pose.npy",
+        "size": 1334838,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_04_000940_000946_pose.npy",
+        "size": 722834,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_05_000352_000401_pose.npy",
+        "size": 1090036,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_05_001148_001156_pose.npy",
+        "size": 967636,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_06_001011_001016_pose.npy",
+        "size": 600428,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_07_000216_000222_pose.npy",
+        "size": 722836,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_07_001209_001219_pose.npy",
+        "size": 1212477,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_08_001538_001547_pose.npy",
+        "size": 1090077,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_08_003029_003039_pose.npy",
+        "size": 1212436,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_09_001321_001328_pose.npy",
+        "size": 845236,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_10_000914_000921_pose.npy",
+        "size": 845237,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_14_000450_000457_pose.npy",
+        "size": 845234,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_15_001033_001042_pose.npy",
+        "size": 1090075,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_16_000558_000606_pose.npy",
+        "size": 967636,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_17_000222_000230_pose.npy",
+        "size": 967675,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_18_000312_000318_pose.npy",
+        "size": 722835,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_18_001243_001253_pose.npy",
+        "size": 1212436,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S3_19_000900_000910_pose.npy",
+        "size": 1212434,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_00_000534_000543_pose.npy",
+        "size": 1183059,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_00_001439_001450_pose.npy",
+        "size": 1364211,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_01_000846_000856_pose.npy",
+        "size": 1153685,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_02_000556_000605_pose.npy",
+        "size": 1065557,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_03_000219_000226_pose.npy",
+        "size": 869714,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_03_000917_000926_pose.npy",
+        "size": 1126796,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_04_001448_001459_pose.npy",
+        "size": 1347077,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_05_001344_001354_pose.npy",
+        "size": 1200199,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_06_001049_001103_pose.npy",
+        "size": 1677554,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_07_000222_000231_pose.npy",
+        "size": 1102276,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_08_000236_000244_pose.npy",
+        "size": 918676,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_09_000237_000243_pose.npy",
+        "size": 722834,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_09_001704_001712_pose.npy",
+        "size": 943154,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_10_001410_001417_pose.npy",
+        "size": 735115,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_11_000956_001006_pose.npy",
+        "size": 1234468,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_12_000938_000948_pose.npy",
+        "size": 1236914,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_13_000213_000224_pose.npy",
+        "size": 1298116,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_13_001113_001121_pose.npy",
+        "size": 979877,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_14_000624_000637_pose.npy",
+        "size": 1596770,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_15_000535_000540_pose.npy",
+        "size": 578398,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_15_001825_001832_pose.npy",
+        "size": 815861,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_16_001125_001135_pose.npy",
+        "size": 1249154,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_17_000341_000352_pose.npy",
+        "size": 1273636,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S4_17_001908_001917_pose.npy",
+        "size": 1090036,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_00_000845_000849_pose.npy",
+        "size": 478031,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_01_000640_000651_pose.npy",
+        "size": 1334879,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_02_000328_000337_pose.npy",
+        "size": 1090035,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_02_001733_001742_pose.npy",
+        "size": 1090034,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_03_001319_001328_pose.npy",
+        "size": 1090077,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_04_000723_000730_pose.npy",
+        "size": 845234,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_05_000635_000649_pose.npy",
+        "size": 1702037,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_06_000424_000435_pose.npy",
+        "size": 1334834,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_06_002016_002023_pose.npy",
+        "size": 845235,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_08_000212_000218_pose.npy",
+        "size": 722836,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_08_001506_001515_pose.npy",
+        "size": 1090036,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_09_001651_001702_pose.npy",
+        "size": 1334877,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_10_000804_000811_pose.npy",
+        "size": 845234,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_10_002145_002152_pose.npy",
+        "size": 845234,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_11_001536_001547_pose.npy",
+        "size": 1334875,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_12_001055_001106_pose.npy",
+        "size": 1334835,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_13_000944_000958_pose.npy",
+        "size": 1702036,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_14_000249_000255_pose.npy",
+        "size": 722834,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_14_001353_001405_pose.npy",
+        "size": 1457235,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_15_001436_001444_pose.npy",
+        "size": 967675,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_16_000910_000922_pose.npy",
+        "size": 1457276,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_17_000207_000217_pose.npy",
+        "size": 1212434,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_18_000216_000228_pose.npy",
+        "size": 1457236,
+        "np": null,
+        "guess": "not-numpy"
+      },
+      {
+        "rel": "joints/S5_18_001224_001234_pose.npy",
+        "size": 1212476,
+        "np": null,
+        "guess": "not-numpy"
+      }
+    ]
+  },
+  "annots": {
+    "count": 3382,
+    "samples": [
+      {
+        "rel": "annots/ball/S1_00_000249_000258_ball_traj.pkl",
+        "size": 86,
+        "type": "pkl/dict",
+        "keys": [
+          "guest_1",
+          "guest_6"
+        ]
+      },
+      {
+        "rel": "annots/ball/S1_06_000229_000236_ball_traj.pkl",
+        "size": 86,
+        "type": "pkl/dict",
+        "keys": [
+          "guest_4",
+          "guest_5"
+        ]
+      },
+      {
+        "rel": "annots/ball/S1_11_001939_001947_ball_traj.pkl",
+        "size": 51,
+        "type": "pkl/dict",
+        "keys": [
+          "guest_25"
+        ]
+      },
+      {
+        "rel": "annots/ball/S1_15_001057_001104_ball_traj.pkl",
+        "size": 86,
+        "type": "pkl/dict",
+        "keys": [
+          "guest_4",
+          "guest_2"
+        ]
+      },
+      {
+        "rel": "annots/ball/S2_00_001045_001058_ball_traj.pkl",
+        "size": 118,
+        "type": "pkl/dict",
+        "keys": [
+          "host_4",
+          "host_1",
+          "host_2"
+        ]
+      },
+      {
+        "rel": "annots/ball/S2_05_000508_000514_ball_traj.pkl",
+        "size": 86,
+        "type": "pkl/dict",
+        "keys": [
+          "guest_2",
+          "guest_4"
+        ]
+      },
+      {
+        "rel": "annots/ball/S2_10_001545_001553_ball_traj.pkl",
+        "size": 121,
+        "type": "pkl/dict",
+        "keys": [
+          "guest_9",
+          "guest_1",
+          "guest_6"
+        ]
+      },
+      {
+        "rel": "annots/ball/S2_14_001348_001355_ball_traj.pkl",
+        "size": 118,
+        "type": "pkl/dict",
+        "keys": [
+          "host_5",
+          "host_1",
+          "host_3"
+        ]
+      },
+      {
+        "rel": "annots/ball/S2_19_001214_001223_ball_traj.pkl",
+        "size": 118,
+        "type": "pkl/dict",
+        "keys": [
+          "host_6",
+          "host_1",
+          "host_5"
+        ]
+      },
+      {
+        "rel": "annots/ball/S3_03_001605_001616_ball_traj.pkl",
+        "size": 143,
+        "type": "pkl/dict",
+        "keys": [
+          "host_17",
+          "host_11",
+          "host_3"
+        ]
+      },
+      {
+        "rel": "annots/ball/S3_07_001209_001219_ball_traj.pkl",
+        "size": 146,
+        "type": "pkl/dict",
+        "keys": [
+          "guest_11",
+          "guest_77",
+          "guest_3"
+        ]
+      },
+      {
+        "rel": "annots/ball/S3_15_001033_001042_ball_traj.pkl",
+        "size": 107,
+        "type": "pkl/dict",
+        "keys": [
+          "host_2",
+          "host_5"
+        ]
+      },
+      {
+        "rel": "annots/ball/S4_00_000534_000543_ball_traj.pkl",
+        "size": 84,
+        "type": "pkl/dict",
+        "keys": [
+          "host_5",
+          "host_4"
+        ]
+      },
+      {
+        "rel": "annots/ball/S4_04_001448_001459_ball_traj.pkl",
+        "size": 51,
+        "type": "pkl/dict",
+        "keys": [
+          "guest_18"
+        ]
+      },
+      {
+        "rel": "annots/ball/S4_09_001704_001712_ball_traj.pkl",
+        "size": 121,
+        "type": "pkl/dict",
+        "keys": [
+          "guest_6",
+          "guest_1",
+          "guest_4"
+        ]
+      },
+      {
+        "rel": "annots/ball/S4_14_000624_000637_ball_traj.pkl",
+        "size": 144,
+        "type": "pkl/dict",
+        "keys": [
+          "guest_1",
+          "guest_5",
+          "guest_4"
+        ]
+      },
+      {
+        "rel": "annots/ball/S5_00_000845_000849_ball_traj.pkl",
+        "size": 50,
+        "type": "pkl/dict",
+        "keys": [
+          "guest_4"
+        ]
+      },
+      {
+        "rel": "annots/ball/S5_05_000635_000649_ball_traj.pkl",
+        "size": 147,
+        "type": "pkl/dict",
+        "keys": [
+          "guest_22",
+          "guest_23",
+          "guest_25"
+        ]
+      },
+      {
+        "rel": "annots/ball/S5_10_000804_000811_ball_traj.pkl",
+        "size": 50,
+        "type": "pkl/dict",
+        "keys": [
+          "guest_1"
+        ]
+      },
+      {
+        "rel": "annots/ball/S5_14_001353_001405_ball_traj.pkl",
+        "size": 84,
+        "type": "pkl/dict",
+        "keys": [
+          "host_5",
+          "host_3"
+        ]
+      },
+      {
+        "rel": "annots/ball/S5_19_001334_001347_ball_traj.pkl",
+        "size": 107,
+        "type": "pkl/dict",
+        "keys": [
+          "host_1",
+          "host_2"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S1_05_000754_000759_tactic.pkl",
+        "size": 119,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S1_11_000435_000444_tactic.pkl",
+        "size": 147,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S1_15_000322_000330_tactic.pkl",
+        "size": 79,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S1_20_001240_001249_tactic.pkl",
+        "size": 109,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S2_04_001222_001235_tactic.pkl",
+        "size": 116,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S2_10_000437_000445_tactic.pkl",
+        "size": 79,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S2_14_000507_000518_tactic.pkl",
+        "size": 109,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S2_19_000327_000335_tactic.pkl",
+        "size": 113,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S3_03_000725_000733_tactic.pkl",
+        "size": 78,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S3_07_000405_000418_tactic.pkl",
+        "size": 141,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S3_14_000603_000606_tactic.pkl",
+        "size": 84,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S3_19_001049_001102_tactic.pkl",
+        "size": 116,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S4_03_001116_001123_tactic.pkl",
+        "size": 79,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S4_09_000424_000431_tactic.pkl",
+        "size": 78,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S4_13_001601_001609_tactic.pkl",
+        "size": 79,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S4_17_002201_002213_tactic.pkl",
+        "size": 110,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S5_04_001058_001106_tactic.pkl",
+        "size": 79,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S5_09_001927_001935_tactic.pkl",
+        "size": 78,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      },
+      {
+        "rel": "annots/tactic/S5_14_000459_000506_tactic.pkl",
+        "size": 80,
+        "type": "pkl/dict",
+        "keys": [
+          "Action",
+          "Offensive"
+        ]
+      }
+    ]
+  },
+  "notes": []
+}

@@ -1,0 +1,54 @@
+work_dir: ./work_dir/recognition/tag/ST_GCN_raw_c4
+
+feeder: feeder.feeder_sga.Feeder
+
+train_feeder_args:
+  data_root: /datasets/basketball
+  split_pkl: train
+  label_pkl: GAR_action_info.pkl
+  fixed_T: 160
+  strict: True
+  debug: False
+  # debug_samples: 32
+
+test_feeder_args:
+  data_root: /datasets/basketball
+  split_pkl: test
+  label_pkl: GAR_action_info.pkl
+  fixed_T: 160
+  strict: True
+  debug: False
+  # debug_samples: 32
+
+model: net.st_gcn.Model
+model_args:
+  in_channels: 3
+  num_class: 20
+  dropout: 0.5
+  edge_importance_weighting: True
+  graph_args:
+    layout: 'sga_interact_17'
+    strategy: 'spatial'
+ignore_weights:
+  - fcn.weight
+  - fcn.bias
+weights: ./model/st_gcn.kinetics.pt
+
+device: [0]
+batch_size: 8
+test_batch_size: 8
+num_epoch: 80
+step: [30, 60]
+base_lr: 0.01
+weight_decay: 0.0005
+num_worker: 0
+log_interval: 10
+
+# explicit: no KD for clean baseline
+use_kd: False
+kd_alpha: 0.0
+kd_temperature: 4.0
+kd_teacher_model: null
+kd_teacher_weights: null
+
+
